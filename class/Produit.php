@@ -10,6 +10,22 @@ class Produit
     private $prix;
 
     /*********CONSTRUCT*********/
+    public function __construct(array $paramsProduit)
+    {
+        $this->hydrate($paramsProduit);
+    }
+
+    public function hydrate(array $paramsProduit)
+    {
+        foreach ($paramsProduit as $key => $value) {
+            $setter = 'set' . ucfirst($key); {
+                if (method_exists($this, $setter)) {
+                    $this->$setter($value);
+                }
+            }
+        }
+    }
+
     /*********GETTERS*********/
     /*
     *return $id
