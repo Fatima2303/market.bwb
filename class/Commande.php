@@ -10,6 +10,22 @@ class Commande
 
     /*********CONSTRUCT*********/
 
+    public function __construct(array $paramsCommande)
+    {
+        $this->hydrate($paramsCommande);
+    }
+
+    public function hydrate(array $paramsCommande)
+    {
+        foreach ($paramsCommande as $key => $value) {
+            $setter = 'set' . ucfirst($key); {
+                if (method_exists($this, $setter)) {
+                    $this->$setter($value);
+                }
+            }
+        }
+    }
+
     /*********GETTERS*********/
 
     /**
@@ -59,7 +75,7 @@ class Commande
      * type : integer
      */
 
-    public function setId( int $id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -89,7 +105,7 @@ class Commande
      * type : boolean
      */
 
-    public function setIsDelivred( bool $isDelivred)
+    public function setIsDelivred(bool $isDelivred)
     {
         $this->isDelivred = $isDelivred;
     }
