@@ -11,6 +11,21 @@ class Client
 
 
     /*********CONSTRUCT*********/
+
+    public function __construct(array $paramsClient)
+    {
+        $this->hydrate($paramsClient);
+    }
+
+    public function hydrate(array $paramsClient)
+    {
+        foreach ($paramsClient as $key => $value) {
+            $setter = 'set' . ucfirst($key);
+            if (method_exists($this, $setter)) {
+                $this->$setter($value);
+            }
+        }
+    }
     /*********GETTERS*********/
 
     /**
