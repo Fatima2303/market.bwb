@@ -95,7 +95,7 @@ class Client
      * type : integer
      */
 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -105,7 +105,7 @@ class Client
      * type : string
      */
 
-    public function setNom($nom)
+    public function setNom(string $nom)
     {
         $this->nom = $nom;
     }
@@ -114,7 +114,7 @@ class Client
      * set value $numeroClient
      * type : integer
      */
-    public function setNumeroClient($numeroClient)
+    public function setNumeroClient(int $numeroClient)
     {
         $this->numeroClient = $numeroClient;
     }
@@ -123,7 +123,7 @@ class Client
      * set value $adresse
      * type : string
      */
-    public function setAdresse($adresse)
+    public function setAdresse(string $adresse)
     {
         $this->adresse = $adresse;
     }
@@ -132,7 +132,7 @@ class Client
      * set value $telephone
      * type : integer
      */
-    public function setTelephone($telephone)
+    public function setTelephone(int $telephone)
     {
         $this->telephone = $telephone;
     }
@@ -142,7 +142,7 @@ class Client
      * type : string
      */
 
-    public function setMail($mail)
+    public function setMail(string $mail)
     {
         $this->mail = $mail;
     }
